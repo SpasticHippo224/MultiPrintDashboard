@@ -34,7 +34,7 @@ function scrollDown(el) {
 }
 
 async function makeTable(key, el, ip) {
-    var url = `http://${ip}`;
+    var url = `https://${ip}`;
     var table = createElement("table", { id: ip + "table", class: "" });
 
     var printer = await get(`${url}/api/printer`, key);
