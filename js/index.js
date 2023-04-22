@@ -1,6 +1,13 @@
 var scrollDelay = 5000;
 
 window.onload = function() {
+    function fullscreenchanged(event) {
+        if (!document.fullscreenElement) {
+            document.querySelector("button").style.display = "";
+        }
+    }
+    document.addEventListener("fullscreenchange", fullscreenchanged);
+
     addPrinter("192.168.0.104:5000", "E6F47CCBC35342D7BDB8FE53AA79E636", document.getElementById("p1"));
     addPrinter("192.168.0.100", "4D13666D43CA4102919768FBCDC500F0", document.getElementById("p2"));
     var el = document.getElementById("main");
